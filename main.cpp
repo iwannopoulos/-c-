@@ -62,15 +62,16 @@ int main() {
                     output << maxheap.printItem(i) << " ";
                 }
                 output <<"\n";
-            }else if (value == "AVLTREE")
+            }else if (value=="AVLTREE")
             {
-                input>>value;
+                input>>value;//ονόμα αρχείου
                 input1.open(value);
                 while(input1 >> num)
                 {
                     avltree.insert(num);
                 }
                 input1.close();
+
             }
         }
     }
