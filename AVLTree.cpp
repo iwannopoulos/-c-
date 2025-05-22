@@ -175,11 +175,11 @@ string AVLTree::Search(int number)
     }
     return "FAILURE";
 }
-void AVLTree::Delete(int number)
+bool AVLTree::Delete(int number)
 {
     // Βρίσκουμε τον κόμβο προς διαγραφ
     if(Search(number)=="FAILURE")
-         return;
+         return false;
     Node *p = root;
     Node *pp = nullptr;  // Γονέας του κόμβου που θέλουμε να διαγράψουμε
     while (p && p->key !=number)
@@ -244,6 +244,7 @@ void AVLTree::Delete(int number)
     delete p;
     // Ενημερώνουμε ύψη και επαναφέρουμε την ισορροπία (αν χρειάζεται)
     Rebalance(pp);
+    return true;
 }
 
 void AVLTree::Rebalance(Node* node)

@@ -34,7 +34,7 @@ class AVLTree
           int countNodes(Node *node);
           int size();
           std::string Search(int number);
-          void Delete(int number);
+          bool Delete(int number);
           void Rebalance(Node *node);
           Node* minnode(Node *node);
           Node* getRoot();
